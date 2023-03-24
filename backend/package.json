@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node src/serve.js",
+    "start":"node src/server.js",
     "dev": "supervisor src/server.js"
   },
   "author": "sauravraj276",
