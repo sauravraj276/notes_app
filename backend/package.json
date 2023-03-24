@@ -4,7 +4,9 @@
   "description": "This server will serve as a api server for the flutter app NOTES_APP",
   "main": "server.js",
   "scripts": {
+    "install": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node src/serve.js",
     "dev": "supervisor src/server.js"
   },
   "author": "sauravraj276",

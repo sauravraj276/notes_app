@@ -14,7 +14,7 @@ mongoose
     "mongodb+srv://sauravraj276:Er1CGB48ziD3zur4@mumbaiaws.jfaccfz.mongodb.net/notesdb"
   )
   .then(() => {
-    router.get("/", function (req, res) {
+    app.get("/", function (req, res) {
       const response = { message: "API WORKS" };
       res.json(response);
     });
@@ -22,6 +22,9 @@ mongoose
     const noteRouter = require('./routes/Note')
     app.use("/notes", noteRouter)
   });
-app.listen(5000, function () {
-  console.log("server started at PORT : 5000");
+
+  const PORT=process.env.PORT || 5000;
+
+app.listen(PORT, function () {
+  console.log("server started at PORT : "+PORT);
 });
