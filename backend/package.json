@@ -5,13 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon src/server.js"
+    "dev": "supervisor src/server.js"
   },
   "author": "sauravraj276",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "mongoose": "^7.0.3",
-    "nodemon": "^2.0.22"
+    "supervisor": "^0.12.0"
   }
 }
