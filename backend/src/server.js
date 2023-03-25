@@ -19,6 +19,8 @@ mongoose
     "mongodb+srv://sauravraj276:Er1CGB48ziD3zur4@mumbaiaws.jfaccfz.mongodb.net/notesdb"
   )
   .then(() => {
+    
+  console.log("Successfully connected to database");
     // app.get("/", function (req, res) {
     //   const response = { message: "API WORKS" };
     //   res.json(response);
