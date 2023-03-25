@@ -13,28 +13,43 @@ app.use(bodyParser.json());
 //   const response = { message: "API WORKS" };
 //   res.json(response);
 // });
+const PORT = process.env.PORT || 5000;
+MONGO_URI =
+  "mongodb+srv://sauravraj276:Er1CGB48ziD3zur4@mumbaiaws.jfaccfz.mongodb.net/notesdb" ||
+  process.env.MONGO_URI;
 
-mongoose
-  .connect(
-    "mongodb+srv://sauravraj276:Er1CGB48ziD3zur4@mumbaiaws.jfaccfz.mongodb.net/notesdb"
-  )
-  .then(() => {
-    
-  console.log("Successfully connected to database");
-    app.get("/", function (req, res) {
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(MONGO_URI);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+};
 
-      const response = { message: "API WORKS" };
-      res.json(response);
-    });
-    
-    const noteRouter = require('./routes/Note')
-    app.use("/notes", noteRouter)
-  }).catch ((error)=> {
-    console.log(error)});
+//Routes go here
 
 
-  const PORT=process.env.PORT || 5000;
-
-app.listen(PORT, function () {
-  console.log("server started at PORT : "+PORT);
+app.get("/", function (req, res) {
+  const response = { message: "API WORKS" };
+  res.json(response);
 });
+
+const noteRouter = require("./routes/Note");
+app.use("/notes", noteRouter);
+
+app.all("*", (req, res) => {
+  res.json({
+    Hello: "No routes are defined at this endpoint, but its working",
+  });
+});
+
+//Connect to the database before listening
+connectDB().then(() => {
+  app.listen(PORT, function () {
+    console.log("server started at PORT : " + PORT);
+  });
+});
+
+
