@@ -28,7 +28,9 @@ mongoose
     
     const noteRouter = require('./routes/Note')
     app.use("/notes", noteRouter)
-  });
+  }).catch (error) {
+    console.error(error);
+}
 
   const PORT=process.env.PORT || 5000;
 
