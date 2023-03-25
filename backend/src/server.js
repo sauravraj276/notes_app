@@ -22,7 +22,7 @@ mongoose
     
   console.log("Successfully connected to database");
     app.get("/", function (req, res) {
-      
+
       const response = { message: "API WORKS" };
       res.json(response);
     });
@@ -30,7 +30,7 @@ mongoose
     const noteRouter = require('./routes/Note')
     app.use("/notes", noteRouter)
   }).catch ((error)=> {
-    console.error(error)});
+    console.log(error)});
 
 
   const PORT=process.env.PORT || 5000;
