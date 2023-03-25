@@ -9,15 +9,20 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get("/", function (req, res) {
+  const response = { message: "API WORKS" };
+  res.json(response);
+});
+
 mongoose
   .connect(
     "mongodb+srv://sauravraj276:Er1CGB48ziD3zur4@mumbaiaws.jfaccfz.mongodb.net/notesdb"
   )
   .then(() => {
-    app.get("/", function (req, res) {
-      const response = { message: "API WORKS" };
-      res.json(response);
-    });
+    // app.get("/", function (req, res) {
+    //   const response = { message: "API WORKS" };
+    //   res.json(response);
+    // });
     
     const noteRouter = require('./routes/Note')
     app.use("/notes", noteRouter)
