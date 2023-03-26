@@ -3,7 +3,10 @@ const router = express.Router();
 
 const Note = require("./../models/Note");
 
-
+router.get("/",async function (req, res) {
+  const response = await Note.find();
+  res.json(response);
+});
 
 router.post("/list", async function (req, res) {
   var notes = await Note.find({ userid: req.body.userid });
@@ -31,4 +34,4 @@ router.post("/delete", async function (req, res) {
   res.json(response);
 });
 
-module.exports=router;
+module.exports = router;
