@@ -5,15 +5,15 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node src/server.js",
+    "start": "node src/server.js",
     "dev": "supervisor src/server.js"
   },
   "author": "sauravraj276",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongoose": "^7.0.3",
     "supervisor": "^0.12.0"
-    
   }
 }
