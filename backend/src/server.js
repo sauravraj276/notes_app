@@ -26,7 +26,7 @@ var options = {
   maxAge: "1m",
   redirect: false,
 };
-app.use(express.static("public", options));
+app.use(express.static("./public", options));
 
 const cors = require("cors");
 app.use(cors());
