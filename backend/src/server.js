@@ -11,7 +11,26 @@ app.use(bodyParser.json());
 
 const cors = require("cors");
 app.use(cors());
-app.use(express.static('./public'))
+
+app.use(function (req, res, next) {
+  res.set('x-timestamp', Date.now())
+  res.set('x-powered-by', 'cyclic.sh')
+  console.log(`[${new Date().toISOString()}] ${req.ip} ${req.method} ${req.path}`);
+  next();
+});
+// This configures static hosting for files in /public that have the extensions
+// listed in the array.
+var options = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html','css','js','ico','jpg','jpeg','png','svg'],
+  index: ['index.html'],
+  maxAge: '1m',
+  redirect: false
+}
+app.use(express.static('public', options))
+
+
 
 
 // app.get("/", function (req, res) {
