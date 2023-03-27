@@ -10,7 +10,7 @@ The Demo can be seen at https://notes-flutter.cyclic.app/
 
 ## Deployment
 
-The compiled web version of the project is deployed on cyclic server. Both the frontend and backend are deployed on the same node server 
+The compiled web version of the project is deployed on cyclic server. Both the frontend and backend are deployed on diff node servers
 
 
 ## Tech Stack
