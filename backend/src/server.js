@@ -36,10 +36,10 @@ const connectDB = async () => {
 //Routes go here
 
 
-app.get("/", function (req, res) {
-  const response = { message: "API WORKS" };
-  res.json(response);
-});
+// app.get("/", function (req, res) {
+//   const response = { message: "API WORKS" };
+//   res.json(response);
+// });
 
 const noteRouter = require("./routes/Note");
 app.use("/notes", noteRouter);
