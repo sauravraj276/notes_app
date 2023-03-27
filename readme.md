@@ -5,7 +5,7 @@ It is a note taking app in which the user can save notes and view all the saved 
 
 ## Demo
 
-The Demo can be seen at https://notes-app.cyclic.app/
+The Demo can be seen at https://notes-flutter.cyclic.app/
 
 
 ## Deployment
