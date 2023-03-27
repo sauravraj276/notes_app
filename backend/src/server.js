@@ -63,11 +63,11 @@ const connectDB = async () => {
 const noteRouter = require("./routes/Note");
 app.use("/notes", noteRouter);
 
-app.all("*", (req, res) => {
-  res.json({
-    Hello: "No routes are defined at this endpoint, but its working",
-  });
-});
+// app.all("*", (req, res) => {
+//   res.json({
+//     Hello: "No routes are defined at this endpoint, but its working",
+//   });
+// });
 
 //Connect to the database before listening
 connectDB().then(() => {
